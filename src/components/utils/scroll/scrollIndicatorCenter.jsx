@@ -7,13 +7,12 @@ class scrollUtil extends Component {
         color: "white",
         width: "5vw",
         position: "relative",
-        marginTop: "90vh",
         animation: "upDown 2s linear infinite normal"
     }
 
     render() {
         return (
-            <div style={{ height: "50vh" }}>
+            <div style={{ margin: "40vh auto 0 40vw" }}>
                 <img src={DownArrow} style={this.getDown} alt="down arrow" />
             </div>
         );

@@ -1,6 +1,7 @@
 body {
   overflow-y: auto;
   overflow-x: hidden;
+  background-image: url("./components/img/Confetti-Doodles.svg");
 }
 
 body::-webkit-scrollbar {

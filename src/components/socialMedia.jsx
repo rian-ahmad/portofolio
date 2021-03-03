@@ -3,13 +3,12 @@ import { SocialIcon } from "react-social-icons";
 
 class SocialMedia extends Component {
     state = {}
-    StyleSocialContainer = { position: "fixed", top: "1vw", marginTop: "10vh", height: "100vh" }
-    ClassSocialContainer = "nav flex-column mx-auto"
-    ClassSocialItem = "my-2"
+    ClassSocialContainer = ""
+    ClassSocialItem = "mx-2"
 
     render() {
         return (
-            <div className={this.ClassSocialContainer} style={this.StyleSocialContainer}>
+            <div className={this.ClassSocialContainer}>
                 <SocialIcon className={this.ClassSocialItem}
                     url="https://www.instagram.com/ryan.ahmds/"
                     bgColor="white"
