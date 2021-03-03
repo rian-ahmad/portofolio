@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Animator, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky } from "react-scroll-motion";
-import Logo1 from './img/1.jpg';
-import Logo2 from './img/2.jpg';
+import img1 from './img/1.jpg';
+import img2 from './img/2.jpg';
 
 class ProjectGallery extends Component {
     state = {}
@@ -21,11 +21,10 @@ class ProjectGallery extends Component {
     }
 
     render() {
-        const FadeUp = this.getAnimFadeUp();
         return (
             <div style={this.ContainerStyle} className="container-fluid">
                 <ScrollPage page={2}>
-                    <Animator animation={FadeUp}>
+                    <Animator animation={this.getAnimFadeUp}>
                         <h1 style={this.FontStyle}>Look at my works</h1>
                     </Animator>
                 </ScrollPage>
@@ -33,10 +32,10 @@ class ProjectGallery extends Component {
                 <ScrollPage page={3} />
 
                 <ScrollPage page={4}>
-                    <Animator animation={batch(Fade(), Sticky(), MoveOut(0, -200))}>
+                    <Animator animation={this.getAnimPage4}>
                         <div className="row blockquote" style={{ width: "90vw" }}>
                             <div className="col-sm-5">
-                                <img src={Logo1} className="img-rounded img-fluid" alt="Cinque Terre" />
+                                <img src={img1} className="img-rounded img-fluid" alt="Cinque Terre" />
                             </div>
                             <div className="col-sm-6 text-light" style={{ backgroundColor: "rgba(100, 100, 255, 0.9)" }}>
                                 <h3 style={{ marginBottom: 1 }}>Lorem Ipsum</h3>
@@ -54,10 +53,10 @@ class ProjectGallery extends Component {
                 </ScrollPage>
 
                 <ScrollPage page={5}>
-                    <Animator animation={batch(FadeIn(), MoveIn(0, 500), Sticky(), Fade())}>
+                    <Animator animation={this.getAnimPage5}>
                         <div className="row blockquote" style={{ width: "90vw" }}>
                             <div className="col-sm-5">
-                                <img src={Logo2} className="img-rounded img-fluid" alt="Cinque Terre" />
+                                <img src={img2} className="img-rounded img-fluid" alt="Cinque Terre" />
                             </div>
                             <div className="col-sm-6 text-light" style={{ backgroundColor: "rgba(100, 100, 255, 0.9)" }}>
                                 <h3 style={{ marginBottom: 1 }}>Sed ornare dui ut nulla auctor</h3>
@@ -80,6 +79,14 @@ class ProjectGallery extends Component {
 
     getAnimFadeUp() {
         return batch(Fade(), Move(), Sticky());
+    }
+
+    getAnimPage4() {
+        return batch(Fade(), Sticky(), MoveOut(0, -200));
+    }
+
+    getAnimPage5() {
+        return batch(FadeIn(), MoveIn(0, 500), Sticky(), Fade());
     }
 }
 
