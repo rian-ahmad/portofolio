@@ -17,14 +17,15 @@ class ProjectGallery extends Component {
         margin: "10% 0",
         fontSize: "7vw",
         textAlign: "center",
-        width: "90vw"
+        width: "90vw",
+        textShadow: "2pt 1pt 3pt dodgerblue"
     }
 
     render() {
         return (
             <div style={this.ContainerStyle} className="container-fluid">
                 <ScrollPage page={2}>
-                    <Animator animation={this.getAnimFadeUp}>
+                    <Animator animation={batch(Fade(), Move(), Sticky())}>
                         <h1 style={this.FontStyle}>Look at my works</h1>
                     </Animator>
                 </ScrollPage>
@@ -32,7 +33,7 @@ class ProjectGallery extends Component {
                 <ScrollPage page={3} />
 
                 <ScrollPage page={4}>
-                    <Animator animation={this.getAnimPage4}>
+                    <Animator animation={batch(Fade(), Sticky(), MoveOut(0, -200))}>
                         <div className="row blockquote" style={{ width: "90vw" }}>
                             <div className="col-sm-5">
                                 <img src={img1} className="img-rounded img-fluid" alt="Cinque Terre" />
@@ -53,7 +54,7 @@ class ProjectGallery extends Component {
                 </ScrollPage>
 
                 <ScrollPage page={5}>
-                    <Animator animation={this.getAnimPage5}>
+                    <Animator animation={batch(FadeIn(), MoveIn(0, 500), Sticky(), Fade())}>
                         <div className="row blockquote" style={{ width: "90vw" }}>
                             <div className="col-sm-5">
                                 <img src={img2} className="img-rounded img-fluid" alt="Cinque Terre" />
@@ -75,18 +76,6 @@ class ProjectGallery extends Component {
                 <ScrollPage page={6} />
             </div>
         );
-    }
-
-    getAnimFadeUp() {
-        return batch(Fade(), Move(), Sticky());
-    }
-
-    getAnimPage4() {
-        return batch(Fade(), Sticky(), MoveOut(0, -200));
-    }
-
-    getAnimPage5() {
-        return batch(FadeIn(), MoveIn(0, 500), Sticky(), Fade());
     }
 }
 

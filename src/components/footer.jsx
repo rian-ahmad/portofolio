@@ -7,17 +7,18 @@ class Footer extends Component {
     StyleFooter = {
         fontFamily: 'Roboto Mono',
         marginLeft: '6vw',
+        height: '70vw'
     }
 
     render() {
-        const FadeUp = this.getAnimFadeUp();
+        const FadeUp = batch(FadeIn(0.7, 1), Move(), Sticky());
         return (
             <div style={this.StyleFooter} className="container-fluid text-light">
                 <ScrollPage page={7}>
                     <Animator animation={FadeUp}>
-                        <div style={{ marginBottom: "20vh" }}>
+                        <div style={{ marginBottom: "20vh", textShadow: "2pt 1pt 3pt dodgerblue" }}>
                             <h1 style={{ fontSize: "7vw" }}>I'M RIAN AHMAD</h1>
-                            <h6 style={{ fontSize: "2vw" }}>ENTHUSIAST TEACHER AND WEB DEVELOPER</h6>
+                            <h6 style={{ fontSize: "2vw" }}>TEACHER AND WEB DEVELOPER</h6>
                         </div>
                         <footer className="row mt-5">
                             <div className="footer col-md-8">
@@ -30,17 +31,15 @@ class Footer extends Component {
 
                             <div className="col-md-4 d-flex justify-content-center"><SocialMedia /></div>
                             <div style={{ fontFamily: "Roboto Mono", width: "90vw" }} className="mt-5">
-                                <small className="d-flex justify-content-center">AUTHOR: RIAN AHMAD | 2021</small>
+                                <small style={{ backgroundColor: "rgba(100, 100, 255, 0.9)" }} className="d-flex justify-content-center mt-5">
+                                    AUTHOR: RIAN AHMAD | 2021
+                                </small>
                             </div>
                         </footer>
                     </Animator>
                 </ScrollPage>
             </div>
         );
-    }
-
-    getAnimFadeUp() {
-        return batch(FadeIn(0.5, 1), Move(), Sticky());
     }
 }
 

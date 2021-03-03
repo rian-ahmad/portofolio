@@ -5,12 +5,16 @@ import { Animator, ScrollPage, batch, Fade, MoveOut, Sticky } from "react-scroll
 class Home extends Component {
     state = {}
     StyleContainerHome = {
-        fontFamily: 'Roboto Mono, monospace',
-        fontWeight: "bold",
         width: "90vw",
         height: "90vh",
         marginTop: "50vh",
         marginLeft: "10vh",
+    }
+
+    StyleFont = {
+        fontFamily: 'Roboto Mono, monospace',
+        fontSize: "7vw",
+        textShadow: "2pt 1pt 3pt dodgerblue"
     }
 
     render() {
@@ -19,8 +23,8 @@ class Home extends Component {
                 <ScrollPage page={0}>
                     <Animator animation={batch(Fade(), Sticky(), MoveOut(0, -200))}>
                         <div id="home" style={this.StyleContainerHome}>
-                            <h1 style={{ fontSize: "7vw" }} className="text-light">I'M RIAN AHMAD</h1>
-                            <h6 style={{ fontSize: "2vw" }} className="text-light">ENTHUSIAST TEACHER AND WEB DEVELOPER</h6>
+                            <h1 style={this.StyleFont} className="text-light">I'M RIAN AHMAD</h1>
+                            <h6 style={{ fontSize: "2vw" }} className="text-light">TEACHER AND WEB DEVELOPER</h6>
                             <ScrollIndicator />
                         </div>
                     </Animator>
