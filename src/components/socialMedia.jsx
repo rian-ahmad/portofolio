@@ -1,37 +1,35 @@
-import React, { Component } from 'react';
-import { SocialIcon } from "react-social-icons";
+import React from 'react';
+import { SocialIcon } from 'react-social-icons';
 
-class SocialMedia extends Component {
-    state = {}
-    ClassSocialContainer = ""
-    ClassSocialItem = "mx-2"
+const style = {
+    width: "5vw", height: "5vw", marginRight: "1rem"
+}
 
-    render() {
-        return (
-            <div className={this.ClassSocialContainer}>
-                <SocialIcon className={this.ClassSocialItem}
-                    url="https://www.instagram.com/ryan.ahmds/"
-                    bgColor="white"
-                    style={{ width: "5vw", height: "5vw" }}
-                />
-                <SocialIcon className={this.ClassSocialItem}
-                    url="https://web.facebook.com/ryan.ahmad.98"
-                    bgColor="white"
-                    style={{ width: "5vw", height: "5vw" }}
-                />
-                <SocialIcon className={this.ClassSocialItem}
-                    url="https://github.com/rian-ahmad"
-                    bgColor="white"
-                    style={{ width: "5vw", height: "5vw" }}
-                />
-                <SocialIcon className={this.ClassSocialItem}
-                    url="https://www.linkedin.com/in/ryan-ahmad-a5a8481ba/"
-                    bgColor="white"
-                    style={{ width: "5vw", height: "5vw" }}
-                />
-            </div>
-        );
-    }
+const SocialMedia = () => {
+    return (
+        <div>
+            <SocialIcon
+                url="https://www.instagram.com/ryan.ahmds/"
+                bgColor="white"
+                style={style}
+            />
+            <SocialIcon
+                url="https://web.facebook.com/ryan.ahmad.98"
+                bgColor="white"
+                style={style}
+            />
+            <SocialIcon
+                url="https://github.com/rian-ahmad"
+                bgColor="white"
+                style={style}
+            />
+            <SocialIcon 
+                url="https://www.linkedin.com/in/ryan-ahmad-a5a8481ba/"
+                bgColor="white"
+                style={style}
+            />
+        </div>
+    );
 }
 
 export default SocialMedia;

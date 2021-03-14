@@ -1,82 +1,36 @@
-import React, { Component } from 'react';
-import { Animator, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky } from "react-scroll-motion";
+import React, { useState } from 'react';
 import img1 from './img/1.jpg';
-import img2 from './img/2.jpg';
+import { useInView } from 'react-intersection-observer';
+import Trail from './utils/trail'
 
-class ProjectGallery extends Component {
-    state = {}
-    ContainerStyle = {
-        marginLeft: "6vw",
-        marginTop: "50vh"
-    }
+const ProjectGallery = () => {
+    const { inView, ref } = useInView({})
+    const [set] = useState(true)
 
-    FontStyle = {
-        fontFamily: 'Roboto Mono',
-        color: "white",
-        letterSpacing: "1vw",
-        margin: "10% 0",
-        fontSize: "7vw",
-        textAlign: "center",
-        width: "90vw",
-        textShadow: "2pt 1pt 3pt dodgerblue"
-    }
-
-    render() {
-        return (
-            <div style={this.ContainerStyle} className="container-fluid">
-                <ScrollPage page={2}>
-                    <Animator animation={batch(Fade(), Move(), Sticky())}>
-                        <h1 style={this.FontStyle}>Look at my works</h1>
-                    </Animator>
-                </ScrollPage>
-
-                <ScrollPage page={3} />
-
-                <ScrollPage page={4}>
-                    <Animator animation={batch(Fade(), Sticky(), MoveOut(0, -200))}>
-                        <div className="row blockquote" style={{ width: "90vw" }}>
-                            <div className="col-sm-5">
-                                <img src={img1} className="img-rounded img-fluid" alt="Cinque Terre" />
-                            </div>
-                            <div className="col-sm-6 text-light" style={{ backgroundColor: "rgba(100, 100, 255, 0.9)" }}>
-                                <h3 style={{ marginBottom: 1 }}>Lorem Ipsum</h3>
-                                <p style={{ fontSize: "0.5em" }}>Morbi non enim ultrices, fermentum ipsum id, tristique odio.</p>
-                                <blockquote className="blockquote">
-                                    <p>
-                                        consectetur adipiscing elit. Donec lobortis nec neque sit amet venenatis. In auctor fermentum sapien non finibus.
-                                        Nunc viverra tortor neque, nec pretium dui lobortis eget.
-                                    </p>
-                                    <footer className="blockquote-footer" style={{ fontSize: "0.8em", color: "whitesmoke" }}>Lorem ipsum dolor sit amet</footer>
-                                </blockquote>
-                            </div>
-                        </div>
-                    </Animator>
-                </ScrollPage>
-
-                <ScrollPage page={5}>
-                    <Animator animation={batch(FadeIn(), MoveIn(0, 500), Sticky(), Fade())}>
-                        <div className="row blockquote" style={{ width: "90vw" }}>
-                            <div className="col-sm-5">
-                                <img src={img2} className="img-rounded img-fluid" alt="Cinque Terre" />
-                            </div>
-                            <div className="col-sm-6 text-light" style={{ backgroundColor: "rgba(100, 100, 255, 0.9)" }}>
-                                <h3 style={{ marginBottom: 1 }}>Sed ornare dui ut nulla auctor</h3>
-                                <p style={{ fontSize: "0.5em" }}>Morbi non enim ultrices, fermentum ipsum id, tristique odio.</p>
-                                <blockquote className="blockquote">
-                                    <p>
-                                        Integer pulvinar hendrerit lectus quis vulputate. Nam posuere, eros in auctor elementum,
-                                        ipsum turpis imperdiet enim, vitae tristique nibh neque eget nulla.
-                                    </p>
-                                    <footer className="blockquote-footer" style={{ fontSize: "0.8em", color: "whitesmoke" }}>Lorem ipsum dolor sit amet</footer>
-                                </blockquote>
-                            </div>
-                        </div>
-                    </Animator>
-                </ScrollPage>
-                <ScrollPage page={6} />
+    return (
+        <div className="container-fluid mt-5">
+            <Trail open={inView} onChange={() => set((state) => !state)}>
+                <span ref={ref}  className="d-flex justify-content-center text-light text-center">Look at my works</span>
+            </Trail>
+            {/* <animated.div ref={ref} className="text-dark display-4 text-center title-box">Look at my works</animated.div> */}
+            <div className="row blockquote bg-light mt-5">
+                <div className="col-sm-5">
+                    <img src={img1} className="img-rounded img-fluid" alt="Cinque Terre" />
+                </div>
+                <div className="col-sm-6">
+                    <h3 style={{ marginBottom: 1 }}>Lorem Ipsum</h3>
+                    <p style={{ fontSize: "0.5em" }}>Morbi non enim ultrices, fermentum ipsum id, tristique odio.</p>
+                    <blockquote className="blockquote">
+                        <p>
+                            consectetur adipiscing elit. Donec lobortis nec neque sit amet venenatis. In auctor fermentum sapien non finibus.
+                            Nunc viverra tortor neque, nec pretium dui lobortis eget.
+                                        </p>
+                        <footer className="blockquote-footer" style={{ fontSize: "0.8em", color: "whitesmoke" }}>Lorem ipsum dolor sit amet</footer>
+                    </blockquote>
+                </div>
             </div>
-        );
-    }
+        </div >
+    );
 }
 
 export default ProjectGallery;

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle";
 import "jquery/dist/jquery";
@@ -6,23 +6,15 @@ import "./App.css";
 import Home from "./components/home";
 import ProjectGallery from "./components/projectGallery";
 import Footer from "./components/footer";
-import { ScrollContainer } from "react-scroll-motion";
 
-class App extends Component {
-  state = {};
-  render() {
-    return (
-      <ScrollContainer>
-        <main className="container-fluid">
-          <div className="row">
-            <Home />
-            <ProjectGallery />
-            <Footer />
-          </div>
-        </main>
-      </ScrollContainer>
-    );
-  }
-}
+const App = () => {
+  return (
+    <main className="container-fluid">
+      <Home />
+      <ProjectGallery />
+      <Footer />
+    </main>
+  );
+};
 
 export default App;
