@@ -2,10 +2,9 @@
   overflow: hidden;
   width: 100%;
   color: white;
-  font-size: 3rem;
+  font-size: 6.5vw;
   font-weight: 800;
-  line-height: 1.2;
-  cursor: pointer;
+  line-height: 6.5vw;
   will-change: transform, opacity, height;
 }
 
@@ -20,13 +19,13 @@
 .trails-text {
   position: relative;
   width: 100%;
-  font-size: 3.5rem;
+  font-size: 15vw;
   font-weight: 800;
   will-change: transform, opacity;
   overflow: hidden;
 }
 
-.trails-text > div {
+.trails-text>div {
   overflow: hidden;
 }
 
@@ -35,14 +34,28 @@
   text-align: center;
 }
 
-.footer a {
+a {
   color: cornflowerblue;
   text-decoration: none;
   font-weight: bold;
 }
 
-.footer a:hover {
-  color: aliceblue;
+a:hover {
+  color: rgb(255, 0, 85);
+  text-decoration: none;
+}
+
+#tags h3 {
+  font-size: 0.7rem;
+  opacity: 0.5;
+}
+
+#logo img {
+  max-height: 50vh;
+}
+
+#aboutContainer {
+  height: 40vh;
 }
 
 @keyframes upDown {
@@ -72,8 +85,16 @@
   }
 }
 
-@media only screen and (max-width: 600px){
+@media screen and (max-width: 600px) {
 
+  .transitions-item {
+    text-align: center;
+    font-size: 7.5vw;
+  }
+
+  #logo img {
+    max-height: 30vh;
+  }
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap");
