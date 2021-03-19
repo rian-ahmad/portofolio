@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
-import { useTransition, animated } from 'react-spring'
+import { useTransition, animated, config } from 'react-spring'
 
 const About = () => {
 
@@ -16,6 +16,7 @@ const About = () => {
         ],
         leave: [{ color: '#8fa5b6' }, { innerHeight: "0vw" }, { opacity: 0, height: "0vw" }],
         update: { color: '#28b4d7' },
+        config: config.default
     })
 
     useEffect(() => {
@@ -28,7 +29,7 @@ const About = () => {
     }, [inView])
 
     return (
-        <div ref={ref} id="aboutContainer">
+        <div ref={ref}>
             {transitions.map(({ item, props: { innerHeight, ...rest }, key }) => (
                 <animated.h1 className="transitions-item" key={key} style={rest}>
                     <animated.span style={{ overflow: 'hidden', height: innerHeight }} className="text-nowrap">

@@ -8,9 +8,9 @@ const Home = () => {
         <div id="home" className="container-fluid mb-5">
             <div className="row">
                 <div id="logo" className="col-md-4">
-                    <img src={Logo} alt="logo" className="img-fluid mx-auto d-block mt-5 p-2" />
+                    <img src={Logo} alt="logo" className="img-fluid mx-auto my-5 d-block p-2" />
                 </div>
-                <div className="col-md mt-5">
+                <div className="col-md my-auto">
                     <About />
                 </div>
             </div>

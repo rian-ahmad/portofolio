@@ -4,29 +4,31 @@
   color: white;
   font-size: 6.5vw;
   font-weight: 800;
-  line-height: 6.5vw;
+  line-height: 7.5vw;
   will-change: transform, opacity, height;
+  margin: 0%;
 }
 
 .trails-main {
   position: relative;
-  width: 100%;
-  height: 100%;
   overflow: hidden;
   align-items: center;
 }
 
 .trails-text {
   position: relative;
-  width: 100%;
-  font-size: 15vw;
-  font-weight: 800;
   will-change: transform, opacity;
   overflow: hidden;
 }
 
 .trails-text>div {
   overflow: hidden;
+}
+
+.toggle {
+  position: relative;
+  overflow: hidden;
+  will-change: opacity, height;
 }
 
 .about {
@@ -54,8 +56,27 @@ a:hover {
   max-height: 50vh;
 }
 
-#aboutContainer {
-  height: 40vh;
+#home {
+  height: 100vh;
+  margin: auto 0;
+}
+
+#projectOpening {
+  width: 100%;
+  font-size: 15vw;
+  font-weight: 800;
+}
+
+#promote {
+  font-size: 5.4vw;
+  font-weight: 700;
+  width: 100%;
+  margin-bottom: 10vh;
+}
+
+#contact {
+  font-size: 4vw;
+  font-weight: 500;
 }
 
 @keyframes upDown {
@@ -96,5 +117,3 @@ a:hover {
     max-height: 30vh;
   }
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap");

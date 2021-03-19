@@ -1,6 +1,6 @@
 {
   "name": "my-portofolio",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "private": true,
   "homepage": "https://rian-ahmad.github.io/portofolio/",
   "dependencies": {
@@ -13,6 +13,7 @@
     "gh-pages": "^3.1.0",
     "jquery": "^3.6.0",
     "react": "^17.0.1",
+    "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.1",
     "react-intersection-observer": "^8.31.0",
     "react-scripts": "^4.0.3",

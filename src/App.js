@@ -1,18 +1,27 @@
-import React from "react";
+import React, { Suspense } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle";
-import "jquery/dist/jquery";
 import "./App.css";
-import Home from "./components/home";
-import ProjectGallery from "./components/projectGallery";
-import Footer from "./components/footer";
+import loader from "./components/utils/loader/Loader.min.svg";
+
+const Home = React.lazy(() => import("./components/home"));
+const Content = React.lazy(() => import("./components/content"));
+const Footer = React.lazy(() => import("./components/footer"));
 
 const App = () => {
   return (
     <main className="container-fluid">
-      <Home />
-      <ProjectGallery />
-      <Footer />
+      <Suspense
+        fallback={
+          <div style={{ textAlign: "center", marginTop: "30vh" }}>
+            <img src={loader} alt="loading..." />
+          </div>
+        }
+      >
+        <Home />
+        <Content />
+        <Footer />
+      </Suspense>
     </main>
   );
 };
