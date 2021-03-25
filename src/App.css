@@ -36,6 +36,19 @@
   text-align: center;
 }
 
+.about-title {
+  font-size: 10vw;
+  font-weight: 800
+}
+
+.about-me {
+  min-height: 100vh;
+}
+
+.info {
+  font-size: 3vw
+}
+
 a {
   color: cornflowerblue;
   text-decoration: none;
@@ -53,17 +66,17 @@ a:hover {
 }
 
 #logo img {
-  max-height: 50vh;
+  min-height: 25vh;
 }
 
 #home {
-  height: 100vh;
+  min-height: 100vh;
   margin: auto 0;
 }
 
 #projectOpening {
   width: 100%;
-  font-size: 15vw;
+  font-size: 13vw;
   font-weight: 800;
 }
 
@@ -113,7 +126,11 @@ a:hover {
     font-size: 7.5vw;
   }
 
+  #logo {
+    margin-bottom: 5vh;
+  }
+
   #logo img {
-    max-height: 30vh;
+    min-height: 30vh;
   }
 }

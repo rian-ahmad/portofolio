@@ -4,10 +4,10 @@ import { useTrail, animated, config } from "react-spring";
 const FadeIn = ({ start, children, ...props }) => {
     const items = React.Children.toArray(children)
     const trail = useTrail(items.length, {
-        config: config.gentle,
+        config: config.wobbly,
         opacity: start ? 1 : 0,
         x: start ? 0 : 20,
-        height: start ? 110 : 0,
+        height: start ? 200 : 0,
         from: { opacity: 0, x: 20, height: 0 },
     })
     return (

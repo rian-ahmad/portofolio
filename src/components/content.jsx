@@ -12,11 +12,11 @@ const Content = () => {
     return (
         <div className="container my-5">
             <FadeIn start={inView} onChange={() => set((state) => !state)}>
-                <span id="projectOpening" ref={ref} className="d-flex justify-content-center text-light text-center mt-5">my works</span>
+                <span id="projectOpening" ref={ref} className="justify-content-center text-light">my works</span>
             </FadeIn>
             <div className="row blockquote bg-light mt-3 p-2">
                 <div className="col-md-6 p-2">
-                    <img src={img1} className="img-rounded img-fluid" alt="Cinque Terre" />
+                    <img src={img1} className="img-rounded img-fluid" alt="Project Screenshot" />
                 </div>
                 <div className="col-md-6 p-3">
                     <h2 className="mb-1">CBT - Anasihin</h2>

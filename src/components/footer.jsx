@@ -17,7 +17,7 @@ const Footer = () => {
                             drop a line</a>
                     </h5>
                 </div>
-                <div className="col-md-4" ref={ref}>
+                <div className="col-md-4 p-0" ref={ref}>
                     <FadeIn start={inView} onChange={() => set((state) => !state)}>
                         <SocialIcon
                             url="https://www.instagram.com/ryan.ahmds/"

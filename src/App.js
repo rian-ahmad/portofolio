@@ -5,6 +5,7 @@ import "./App.css";
 import loader from "./components/utils/loader/Loader.min.svg";
 
 const Home = React.lazy(() => import("./components/home"));
+const AboutMe = React.lazy(() => import("./components/aboutMe"));
 const Content = React.lazy(() => import("./components/content"));
 const Footer = React.lazy(() => import("./components/footer"));
 
@@ -19,6 +20,7 @@ const App = () => {
         }
       >
         <Home />
+        <AboutMe />
         <Content />
         <Footer />
       </Suspense>
