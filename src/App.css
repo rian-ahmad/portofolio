@@ -66,7 +66,8 @@ a:hover {
 }
 
 #logo img {
-  min-height: 25vh;
+  min-height: 20vh;
+  width: auto;
 }
 
 #home {
@@ -127,10 +128,10 @@ a:hover {
   }
 
   #logo {
-    margin-bottom: 5vh;
+    margin: 5vh;
   }
 
   #logo img {
-    min-height: 30vh;
+    max-width: 60vw;
   }
 }
